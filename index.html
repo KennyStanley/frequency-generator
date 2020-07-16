@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/controller.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Adjustable Base Frequency Generator</title>
+</head>
+<body>
+    
+    <h1>Frequency Generator</h1>
+    <div>
+        <p>Enter a note (Ex: A4, D#2, Eb7, etc.)</p>
+        <input type="text" id="note" placeholder="Note">
+    </div>
+    <div>
+        <p>Enter a base frequency (Ex: 440, 432, 446, etc.)</p>
+        <input type="text" id="base_freq" placeholder="Base Frequency">
+    </div>
+    <button onclick="handler(document.getElementById('note').value, document.getElementById('base_freq').value); 
+                    //document.getElementById('note').value = null;
+                    //document.getElementById('base_freq').value = null;">Play Tone</button>
+
+
+</body>
+</html>
