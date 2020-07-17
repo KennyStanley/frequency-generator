@@ -19,14 +19,14 @@
         <input type="text" id="pitch_standard" placeholder="Pitch Standard" value="440">
     </div>
     <div>
-        <p><strong class="title">Frequency Multiplier</strong> <br>(Ex: 1 = 60 bpm, <br id="break">1.0666666667 = 64bpm, etc.)</p>
-        <input type="text" id="freq_multiplier" placeholder="Frequency Multiplier" value="1">
+        <p><strong class="title">Cycles Per Minute</strong> <br>(Ex: 60 = 1 Hz, <br id="break"> 64 = 1.0666666667 Hz, etc.)</p>
+        <input type="text" id="cyles_per_minute" placeholder="Cycles Per Minute" value="60">
     </div>
     <div>
-        <p><strong class="title">Duration</strong> (Ex: 1, 3, 5 (sec))</p>
+        <p><strong class="title">Duration</strong> (Ex: 1, 3, 5 sec)</p>
         <input type="text" id="duration" placeholder="Frequency Duration" value="1">
     </div>
-    <button onclick="handler(document.getElementById('note').value, document.getElementById('pitch_standard').value, document.getElementById('freq_multiplier').value, document.getElementById('duration').value); 
+    <button onclick="handler(document.getElementById('note').value, document.getElementById('pitch_standard').value, document.getElementById('cyles_per_minute').value, document.getElementById('duration').value); 
                     //document.getElementById('note').value = null;
                     //document.getElementById('base_freq').value = null;">Play Tone</button>
 
