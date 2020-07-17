@@ -35,7 +35,7 @@ playTone = (frequency, type, duration) => {
 		type = "sine";
 	}
 	if (duration === undefined) {
-		duration = 1.3;
+		duration = 3;
 	}
 	if (frequency === undefined) {
 		frequency = 440;
@@ -77,9 +77,11 @@ completeChord = (frequency, type, duration) => {
 }
 
 
-function handler(input, base_freq){
+function handler(input, pitch_standard, freq_multiplier, duration){
     let note = input.split('');
-    base_freq = parseInt(base_freq);
+    pitch_standard = parseInt(pitch_standard);
+	freq_multiplier = parseInt(freq_multiplier);
+	duration = parseInt(duration);
     if (note.length == 3){
         if (note[1] == 'b'){
             note_base = base_notes_flat.indexOf(note[0] + note[1]);
@@ -92,12 +94,12 @@ function handler(input, base_freq){
         note_base = base_notes_flat.indexOf(note[0]);
     }
     octave = parseInt(note[note.length - 1]);
-    calcFreq(note_base, octave, base_freq);
+    calcFreq(note_base, octave, pitch_standard, freq_multiplier, duration);
 }
 
-function calcFreq(base, octave, base_freq){
+function calcFreq(base, octave, pitch_standard, freq_multiplier, duration){
     note_interval = Math.pow(2, 1/12);
-    middle_freq = base_freq * Math.pow(note_interval, base);
+    middle_freq = pitch_standard * Math.pow(note_interval, base);
     if (base > 2){
         middle_freq /= 2;
     }
@@ -107,7 +109,9 @@ function calcFreq(base, octave, base_freq){
     }
     else {
         freq = middle_freq * (Math.pow(2, octave - 4))
-    }
+	}
+	
+	freq *= freq_multiplier;
 
-    playTone(freq);
+    playTone(freq, 'sine', duration);
 }

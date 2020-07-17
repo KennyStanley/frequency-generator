@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+
 * {
     color: white;
 }
@@ -11,7 +13,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
 }
 
 div {
@@ -20,16 +23,62 @@ div {
     align-items: center;
 }
 
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
 p {
     margin-bottom: 0.5rem;
+    font-size: large;
+    text-align: center;
+}
+.title {
+    font-size: larger;
 }
 
 input {
     width: 20ch;
+    height: 35px;
     color: black;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    border-radius: 1rem;
+    border: none;
 }
 
 button {
-    margin-top: 1rem;
-    color: black;
+    margin-top: 2rem;
+    color: white;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+}
+
+#break {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    h1 {
+        font-size: 40px;
+    }
+    p, input, button {
+        font-size: unset;
+    }
+}
+@media screen and (max-width: 450px) {
+    p, input, button {
+        font-size: unset;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #break {
+        display: unset;
+    }
 }
